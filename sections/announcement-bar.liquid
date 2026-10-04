@@ -1,3 +1,7 @@
+{%- if section.blocks.size > 1 -%}
+  <announcement-rotator class="announcement-rotator" data-interval="{{ section.settings.rotate_seconds | default: 4 | times: 1000 }}">
+    <div class="announcement-bar__track">
+{%- endif -%}
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
@@ -19,11 +23,140 @@
       </div>
   {%- endcase -%}
 {%- endfor -%}
+{%- if section.blocks.size > 1 -%}
+    </div>
+  </announcement-rotator>
+  <script>
+    (function () {
+      if (customElements.get('announcement-rotator')) return;
+
+      class AnnouncementRotator extends HTMLElement {
+        connectedCallback() {
+          this.track = this.querySelector('.announcement-bar__track');
+          this.slides = Array.from(this.track.children);
+          this.count = this.slides.length;
+          this.index = 0;
+          this.timer = 0;
+          this.moving = false;
+          this.interval = parseInt(this.dataset.interval, 10);
+          if (!(this.interval >= 1000 && this.interval <= 5000)) this.interval = 4000;
+          this.reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (this.count < 2 || this.reduceMotion) return;
+
+          var height = this.offsetHeight;
+          this.style.height = height + 'px';
+          this.slides.forEach(function (slide) {
+            slide.style.height = height + 'px';
+          });
+          this.classList.add('is-ready');
+
+          var clone = this.slides[0].cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          this.track.appendChild(clone);
+
+          this.onEnter = this.pause.bind(this);
+          this.onLeave = this.play.bind(this);
+          this.onEnd = this.onEnd.bind(this);
+          this.onPointerDown = function (event) { this.startY = event.clientY; }.bind(this);
+          this.onPointerUp = function (event) {
+            var delta = event.clientY - this.startY;
+            if (Math.abs(delta) < 28) return;
+            if (delta < 0) this.next();
+            else this.prev();
+          }.bind(this);
+
+          this.addEventListener('mouseenter', this.onEnter);
+          this.addEventListener('mouseleave', this.onLeave);
+          this.addEventListener('focusin', this.onEnter);
+          this.addEventListener('focusout', this.onLeave);
+          this.addEventListener('pointerdown', this.onPointerDown, { passive: true });
+          this.addEventListener('pointerup', this.onPointerUp, { passive: true });
+          this.track.addEventListener('transitionend', this.onEnd);
+          this.play();
+        }
+
+        disconnectedCallback() {
+          this.pause();
+        }
+
+        play() {
+          if (this.reduceMotion || this.count < 2) return;
+          this.pause();
+          this.timer = window.setInterval(this.next.bind(this), this.interval);
+        }
+
+        pause() {
+          window.clearInterval(this.timer);
+        }
+
+        apply(animate) {
+          if (animate === false) this.track.style.transition = 'none';
+          this.track.style.transform = 'translateY(' + (-this.index * this.offsetHeight) + 'px)';
+          if (animate === false) {
+            this.track.offsetHeight;
+            this.track.style.transition = '';
+            this.moving = false;
+          } else {
+            this.moving = true;
+          }
+          var current = this.index % this.count;
+          this.slides.forEach(function (slide, i) {
+            slide.toggleAttribute('aria-hidden', i !== current);
+          });
+        }
+
+        next() {
+          if (this.moving) return;
+          this.index += 1;
+          this.apply(true);
+        }
+
+        prev() {
+          if (this.moving) return;
+          if (this.index === 0) {
+            this.index = this.count;
+            this.apply(false);
+            var self = this;
+            requestAnimationFrame(function () {
+              self.index = self.count - 1;
+              self.apply(true);
+            });
+            return;
+          }
+          this.index -= 1;
+          this.apply(true);
+        }
+
+        onEnd(event) {
+          if (event.target !== this.track || event.propertyName !== 'transform') return;
+          this.moving = false;
+          if (this.index !== this.count) return;
+          this.index = 0;
+          this.apply(false);
+        }
+      }
+
+      customElements.define('announcement-rotator', AnnouncementRotator);
+    })();
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "t:sections.announcement-bar.name",
   "max_blocks": 12,
+  "settings": [
+    {
+      "type": "range",
+      "id": "rotate_seconds",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "s",
+      "label": "Rotate every",
+      "default": 4
+    }
+  ],
   "blocks": [
     {
       "type": "announcement",

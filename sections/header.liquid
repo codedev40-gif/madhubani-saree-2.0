@@ -367,6 +367,25 @@
       <nav class="header__inline-menu">
         <ul class="list-menu list-menu--inline" role="list">
           {%- for link in section.settings.menu.links -%}
+            {%- liquid
+              assign mega_block = nil
+              assign link_title_down = link.title | downcase | strip
+              for block in section.blocks
+                if block.type == 'mega_images'
+                  assign block_title_down = block.settings.menu_item | downcase | strip
+                  if block_title_down == link_title_down
+                    assign mega_block = block
+                    break
+                  endif
+                endif
+              endfor
+              assign has_mega_image = false
+              if mega_block != blank
+                if mega_block.settings.image_1 != blank or mega_block.settings.image_2 != blank or mega_block.settings.image_3 != blank
+                  assign has_mega_image = true
+                endif
+              endif
+            -%}
             <li>
               {%- if link.links != blank -%}
                 <details-disclosure>
@@ -375,7 +394,11 @@
                       <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                       {% render 'icon-caret' %}
                     </summary>
-                    <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
+                    <ul class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce{% if has_mega_image %} header__submenu--mega{% endif %}" role="list" tabindex="-1">
+                      {%- if has_mega_image -%}
+                        <li class="header__mega-links">
+                          <ul class="header__mega-linklist list-menu" role="list">
+                      {%- endif -%}
                       {%- for childlink in link.links -%}
                         <li>
                           {%- if childlink.links == blank -%}
@@ -401,6 +424,56 @@
                           {%- endif -%}
                         </li>
                       {%- endfor -%}
+                      {%- if has_mega_image -%}
+                          </ul>
+                        </li>
+                        <li class="header__mega-images" {{ mega_block.shopify_attributes }}>
+                          {%- for i in (1..3) -%}
+                            {%- liquid
+                              case i
+                                when 1
+                                  assign mega_img = mega_block.settings.image_1
+                                  assign mega_link = mega_block.settings.link_1
+                                  assign mega_label = mega_block.settings.label_1
+                                when 2
+                                  assign mega_img = mega_block.settings.image_2
+                                  assign mega_link = mega_block.settings.link_2
+                                  assign mega_label = mega_block.settings.label_2
+                                else
+                                  assign mega_img = mega_block.settings.image_3
+                                  assign mega_link = mega_block.settings.link_3
+                                  assign mega_label = mega_block.settings.label_3
+                              endcase
+                              assign mega_alt = mega_img.alt | default: mega_label | default: link.title
+                            -%}
+                            {%- if mega_img != blank -%}
+                              {%- if mega_link != blank -%}
+                                <a href="{{ mega_link }}" class="header__mega-image">
+                              {%- else -%}
+                                <div class="header__mega-image">
+                              {%- endif -%}
+                                <img
+                                  src="{{ mega_img | image_url: width: 520 }}"
+                                  srcset="{{ mega_img | image_url: width: 260 }} 260w, {{ mega_img | image_url: width: 520 }} 520w"
+                                  sizes="260px"
+                                  alt="{{ mega_alt | escape }}"
+                                  width="260"
+                                  height="330"
+                                  loading="lazy"
+                                  decoding="async"
+                                >
+                                {%- if mega_label != blank -%}
+                                  <span class="header__mega-caption">{{ mega_label | escape }}</span>
+                                {%- endif -%}
+                              {%- if mega_link != blank -%}
+                                </a>
+                              {%- else -%}
+                                </div>
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </li>
+                      {%- endif -%}
                     </ul>
                   </details>
                 </details-disclosure>
@@ -766,6 +839,77 @@
         "id": "show_transparent",
         "default": true,
         "label": "Enable Transparent header"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_images",
+      "name": "Megamenu images",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Menu item",
+          "info": "Match a top-level menu name, for example Kurta Sets. Shown on desktop only."
+        },
+        {
+          "type": "header",
+          "content": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label_1",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label_2",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link"
+        },
+        {
+          "type": "header",
+          "content": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "label_3",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "link_3",
+          "label": "Link"
+        }
+      ]
     }
   ]
 }
