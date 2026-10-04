@@ -34,10 +34,28 @@
               "color_scheme": "inverse",
               "link": ""
             }
+          },
+          "announcement_PngNea": {
+            "type": "announcement",
+            "settings": {
+              "text": "GET 10% OFF ON FIRST ORDER",
+              "color_scheme": "inverse",
+              "link": ""
+            }
+          },
+          "announcement_MKCwVR": {
+            "type": "announcement",
+            "settings": {
+              "text": "GET FREE SHIPPING ABOVE 1999 RS. ORDER VALUE",
+              "color_scheme": "inverse",
+              "link": ""
+            }
           }
         },
         "block_order": [
-          "announcement-bar-0"
+          "announcement-bar-0",
+          "announcement_PngNea",
+          "announcement_MKCwVR"
         ],
         "settings": {
           "rotate_seconds": 4
