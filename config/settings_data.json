@@ -50,12 +50,21 @@
               "color_scheme": "inverse",
               "link": ""
             }
+          },
+          "announcement_yHqWpM": {
+            "type": "announcement",
+            "settings": {
+              "text": "Welcome to our store test",
+              "color_scheme": "inverse",
+              "link": "shopify://products/copy-narayan-avatar-hand-painted-madhubani-tussar-silk-saree-blouse-set"
+            }
           }
         },
         "block_order": [
           "announcement-bar-0",
           "announcement_PngNea",
-          "announcement_MKCwVR"
+          "announcement_MKCwVR",
+          "announcement_yHqWpM"
         ],
         "settings": {
           "rotate_seconds": 4
