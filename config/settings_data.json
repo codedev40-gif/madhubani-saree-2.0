@@ -1,1 +1,194 @@
-{"current":{"colors_solid_button_labels":"#ffffff","colors_accent_1":"#121212","gradient_accent_1":"linear-gradient(270deg, rgba(18, 18, 18, 1), rgba(249, 208, 163, 1) 89%)","colors_accent_2":"#121212","colors_text":"#121212","colors_outline_button_labels":"#121212","colors_background_1":"#f8e2be","colors_background_2":"#f3d8ac","type_header_font":"amiri_n4","type_body_font":"assistant_n4","page_width":"1600","social_twitter_link":"","social_facebook_link":"https:\/\/www.facebook.com\/madhubanipaints","social_instagram_link":"https:\/\/www.instagram.com\/madhubanipaints","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"MADE IN BIHAR, HANDPAINTED WITH LOVE","color_scheme":"inverse","link":""}}},"block_order":["announcement-bar-0"],"settings":{}},"header":{"type":"header","settings":{"color_scheme":"background-2","logo_width":70,"logo_position":"top-center","menu":"main-menu","show_line_separator":true,"enable_sticky_header":true,"show_transparent":true}},"footer":{"type":"footer","blocks":{"footer-0":{"type":"link_list","disabled":true,"settings":{"heading":"Shop","menu":"main-menu"}},"footer-1":{"type":"text","settings":{"heading":"SHATAKSHI CREATIONS","subtext":"<p>Madhubani Art From Mithila<br\/>MADHUBANI PAINTS is a Bihar based ethnic label brand, run by National Award Winner Smt. Asha Jha. This label is run solely by a group of 150-200 women. Shipping worldwide.<\/p>"}},"73357a7b-2320-4001-8797-1b5b774f5086":{"type":"link_list","settings":{"heading":"About us","menu":"footer"}}},"block_order":["footer-0","footer-1","73357a7b-2320-4001-8797-1b5b774f5086"],"settings":{"color_scheme":"background-2","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","show_social":true,"enable_country_selector":false,"enable_language_selector":false,"Whatsappchat":true,"linkw":"https:\/\/web.whatsapp.com\/send?text=https%3A%2F%2Fmadhubanipaints.com%2F%0A%0AI%27m%20interested%20in%20this%20product%20and%20I%20have%20a%20few%20questions.%20Can%20you%20help%3F&phone=917503694644","linkwm":"https:\/\/api.whatsapp.com\/send?text=https%3A%2F%2Fmadhubanipaints.com%2F%0A%0AI%27m%20interested%20in%20this%20product%20and%20I%20have%20a%20few%20questions.%20Can%20you%20help%3F&phone=917503694644"}}},"content_for_index":[],"blocks":{"14060646107696862457":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","disabled":false,"settings":{}}}},"presets":{"Default":{"colors_solid_button_labels":"#FFFFFF","colors_accent_1":"#121212","colors_accent_2":"#334FB4","colors_text":"#121212","colors_outline_button_labels":"#121212","colors_background_1":"#FFFFFF","colors_background_2":"#F3F3F3","type_header_font":"assistant_n4","type_body_font":"assistant_n4","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"color_scheme":"background-1"}}},"block_order":["announcement-bar-0"],"settings":{}}}},"Craft":{"colors_solid_button_labels":"#EFECEC","colors_accent_1":"#2A332F","colors_accent_2":"#476154","colors_text":"#1C1A1A","colors_outline_button_labels":"#7B8382","colors_background_1":"#EFECEC","colors_background_2":"#C1BCAE","type_header_font":"americana_n4","type_body_font":"quattrocento_sans_n4","sections":{"footer":{"type":"footer","blocks":{"menu":{"type":"link_list","settings":{}},"text":{"type":"text","settings":{}}},"block_order":["menu","text"],"settings":{"color_scheme":"accent-1"}}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "colors_solid_button_labels": "#ffffff",
+    "colors_accent_1": "#121212",
+    "gradient_accent_1": "linear-gradient(270deg, rgba(18, 18, 18, 1), rgba(249, 208, 163, 1) 89%)",
+    "colors_accent_2": "#121212",
+    "colors_text": "#121212",
+    "colors_outline_button_labels": "#121212",
+    "colors_background_1": "#f8e2be",
+    "colors_background_2": "#f3d8ac",
+    "type_header_font": "amiri_n4",
+    "type_body_font": "assistant_n4",
+    "page_width": "1600",
+    "social_twitter_link": "",
+    "social_facebook_link": "https://www.facebook.com/madhubanipaints",
+    "social_instagram_link": "https://www.instagram.com/madhubanipaints",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "text": "MADE IN BIHAR, HANDPAINTED WITH LOVE",
+              "color_scheme": "inverse",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+          "rotate_seconds": 4
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "mega_images_VGkwji": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Sarees",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_9826b4c3-33b2-479e-8fd7-f515994a9532.jpg",
+              "label_1": "Teej Special",
+              "link_1": "shopify://products/chumaun-handpainted-madhubani-bishnupuri-silk-saree",
+              "image_2": "shopify://shop_images/chhath_yellow.jpg",
+              "label_2": "Chhath Pooja",
+              "link_2": "shopify://products/gubbaro-handpainted-madhubani-mithila-mayur-cotton-pant",
+              "image_3": "shopify://shop_images/rn-image_picker_lib_temp_e4acb126-74ae-49aa-9341-fbd0ce8aa710.jpg",
+              "label_3": "Bandhani Sarees",
+              "link_3": "shopify://collections/bandhani"
+            }
+          }
+        },
+        "block_order": [
+          "mega_images_VGkwji"
+        ],
+        "settings": {
+          "color_scheme": "background-2",
+          "logo_width": 70,
+          "logo_position": "top-center",
+          "menu": "main-menu",
+          "show_line_separator": true,
+          "enable_sticky_header": true,
+          "show_transparent": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "link_list",
+            "disabled": true,
+            "settings": {
+              "heading": "Shop",
+              "menu": "main-menu"
+            }
+          },
+          "footer-1": {
+            "type": "text",
+            "settings": {
+              "heading": "SHATAKSHI CREATIONS",
+              "subtext": "<p>Madhubani Art From Mithila<br/>MADHUBANI PAINTS is a Bihar based ethnic label brand, run by National Award Winner Smt. Asha Jha. This label is run solely by a group of 150-200 women. Shipping worldwide.</p>"
+            }
+          },
+          "73357a7b-2320-4001-8797-1b5b774f5086": {
+            "type": "link_list",
+            "settings": {
+              "heading": "About us",
+              "menu": "footer"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "73357a7b-2320-4001-8797-1b5b774f5086"
+        ],
+        "settings": {
+          "color_scheme": "background-2",
+          "newsletter_enable": true,
+          "newsletter_heading": "Subscribe to our emails",
+          "show_social": true,
+          "enable_country_selector": false,
+          "enable_language_selector": false,
+          "Whatsappchat": true,
+          "linkw": "https://web.whatsapp.com/send?text=https%3A%2F%2Fmadhubanipaints.com%2F%0A%0AI%27m%20interested%20in%20this%20product%20and%20I%20have%20a%20few%20questions.%20Can%20you%20help%3F&phone=917503694644",
+          "linkwm": "https://api.whatsapp.com/send?text=https%3A%2F%2Fmadhubanipaints.com%2F%0A%0AI%27m%20interested%20in%20this%20product%20and%20I%20have%20a%20few%20questions.%20Can%20you%20help%3F&phone=917503694644"
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "colors_solid_button_labels": "#FFFFFF",
+      "colors_accent_1": "#121212",
+      "colors_accent_2": "#334FB4",
+      "colors_text": "#121212",
+      "colors_outline_button_labels": "#121212",
+      "colors_background_1": "#FFFFFF",
+      "colors_background_2": "#F3F3F3",
+      "type_header_font": "assistant_n4",
+      "type_body_font": "assistant_n4",
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "blocks": {
+            "announcement-bar-0": {
+              "type": "announcement",
+              "settings": {
+                "color_scheme": "background-1"
+              }
+            }
+          },
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "settings": {}
+        }
+      }
+    },
+    "Craft": {
+      "colors_solid_button_labels": "#EFECEC",
+      "colors_accent_1": "#2A332F",
+      "colors_accent_2": "#476154",
+      "colors_text": "#1C1A1A",
+      "colors_outline_button_labels": "#7B8382",
+      "colors_background_1": "#EFECEC",
+      "colors_background_2": "#C1BCAE",
+      "type_header_font": "americana_n4",
+      "type_body_font": "quattrocento_sans_n4",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "menu",
+            "text"
+          ],
+          "settings": {
+            "color_scheme": "accent-1"
+          }
+        }
+      }
+    }
+  }
+}
