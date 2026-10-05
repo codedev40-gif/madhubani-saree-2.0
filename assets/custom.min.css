@@ -690,6 +690,14 @@ a.header__heading-link.link.link--text.focus-inset {
     text-decoration: underline;
     text-underline-offset: 0.3rem;
   }
+
+  .header__inline-menu .header__menu-item .icon-caret {
+    transition: transform 0.2s ease;
+  }
+
+  .header__inline-menu details[open] > .header__menu-item .icon-caret {
+    transform: rotate(180deg);
+  }
 }
 
 announcement-rotator,
