@@ -692,11 +692,46 @@ a.header__heading-link.link.link--text.focus-inset {
   }
 
   .header__inline-menu .header__menu-item .icon-caret {
-    transition: transform 0.2s ease;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .header__inline-menu details[open] > .header__menu-item .icon-caret {
     transform: rotate(180deg);
+  }
+
+  .header__inline-menu details > .header__submenu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-1.2rem);
+    pointer-events: none;
+    animation: none;
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s linear 0.65s;
+  }
+
+  .header__inline-menu details > .header__submenu.header__submenu--mega {
+    display: flex;
+  }
+
+  .header__inline-menu details[open] > .header__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    animation: none;
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__inline-menu details > .header__submenu,
+  .header__inline-menu details[open] > .header__submenu {
+    transition: none;
+    transform: none;
   }
 }
 

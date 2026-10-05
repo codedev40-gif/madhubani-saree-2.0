@@ -20,17 +20,23 @@ class DetailsDisclosure extends HTMLElement {
     const details = this.mainDetailsToggle;
     const summary = details.querySelector('summary');
     let closeTimer;
+    let openTimer;
 
     const open = () => {
       clearTimeout(closeTimer);
-      details.setAttribute('open', '');
+      clearTimeout(openTimer);
+      if (details.hasAttribute('open')) return;
+      openTimer = setTimeout(() => {
+        if (this.matches(':hover') || this.contains(document.activeElement)) details.setAttribute('open', '');
+      }, 80);
     };
 
     const scheduleClose = () => {
       clearTimeout(closeTimer);
+      clearTimeout(openTimer);
       closeTimer = setTimeout(() => {
         if (!this.matches(':hover') && !this.contains(document.activeElement)) this.close();
-      }, 150);
+      }, 120);
     };
 
     this.addEventListener('mouseenter', open);
