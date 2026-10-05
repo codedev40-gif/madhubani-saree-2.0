@@ -73,6 +73,19 @@
       "header": {
         "type": "header",
         "blocks": {
+          "mega_images_6kWnXQ": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Kurta Sets",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_8eaab5ad-4fd0-4ebe-8123-c20e22781203.jpg",
+              "label_1": "test",
+              "link_1": "#",
+              "label_2": "",
+              "link_2": "",
+              "label_3": "",
+              "link_3": ""
+            }
+          },
           "mega_images_VGkwji": {
             "type": "mega_images",
             "settings": {
@@ -90,6 +103,7 @@
           }
         },
         "block_order": [
+          "mega_images_6kWnXQ",
           "mega_images_VGkwji"
         ],
         "settings": {
