@@ -212,36 +212,11 @@
                 {%- liquid
                   assign size_chart_image = nil
                   assign size_chart_src = ''
-                  assign size_chart_width = 2000
-                  assign size_chart_height = 1600
+                  assign size_chart_width = 1400
+                  assign size_chart_height = 1400
 
                   if section.settings.sizeimageimage
-                    for image in product.images
-                      assign image_src_down = image.src | downcase
-                      assign image_alt_down = image.alt | downcase
-                      if image_src_down contains 'size_chart' or image_src_down contains 'sizechart' or image_src_down contains 'size-chart' or image_alt_down contains 'size chart'
-                        assign size_chart_image = image
-                        break
-                      endif
-                    endfor
-
-                    if size_chart_image == blank
-                      for product_collection in product.collections
-                        assign size_collection = collections[product_collection.handle]
-                        assign size_chart_raw = size_collection.metafields.custom.sizeimage.value | default: size_collection.metafields.custom.sizeimage
-                        if size_chart_raw == blank
-                          assign size_chart_raw = product_collection.metafields.custom.sizeimage.value | default: product_collection.metafields.custom.sizeimage
-                        endif
-                        if size_chart_raw != blank
-                          assign size_chart_image = size_chart_raw
-                          break
-                        endif
-                      endfor
-                    endif
-
-                    if size_chart_image == blank
-                      assign size_chart_image = product.metafields.custom.sizeimage.value | default: product.metafields.custom.sizeimage
-                    endif
+                    assign size_chart_image = product.metafields.custom.sizeimage.value | default: product.metafields.custom.sizeimage
 
                     if size_chart_image.first.aspect_ratio != blank or size_chart_image.first.preview_image != blank
                       assign size_chart_image = size_chart_image.first
@@ -258,33 +233,6 @@
                       endcapture
                       assign size_chart_src = size_chart_src | strip
                     endif
-
-                    if size_chart_src == blank
-                      assign chart_is_blouse = false
-                      assign product_tags = product.tags | join: ' '
-                      assign product_blob = product.title | append: ' ' | append: product.type | append: ' ' | append: product_tags | downcase
-                      if product_blob contains 'blouse' or product_blob contains 'saree' or product_blob contains 'sari'
-                        assign chart_is_blouse = true
-                      endif
-                      unless chart_is_blouse
-                        for product_collection in product.collections
-                          assign handle_down = product_collection.handle | downcase
-                          if handle_down contains 'blouse' or handle_down contains 'saree' or handle_down contains 'sari'
-                            assign chart_is_blouse = true
-                            break
-                          endif
-                        endfor
-                      endunless
-                      if chart_is_blouse
-                        assign size_chart_src = 'https://www.madhubanipaints.com/cdn/shop/files/Size_Chart.jpg?width=1400'
-                        assign size_chart_width = 1600
-                        assign size_chart_height = 1902
-                      else
-                        assign size_chart_src = 'https://www.madhubanipaints.com/cdn/shop/files/MADHUBANIPAINTSSIZECHART_1.png?width=1400'
-                        assign size_chart_width = 2000
-                        assign size_chart_height = 1600
-                      endif
-                    endif
                   endif
                 -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -293,7 +241,7 @@
                         <div class="disflex">                                                    
                         <legend class="form__label">{{ option.name }}</legend>  
                   
-                      {%- if section.settings.sizeimageimage and option.values.size > 1 -%}
+                      {%- if section.settings.sizeimageimage and size_chart_src != blank and option.values.size > 1 -%}
                           <div class="size-modal">
                             <button type="button" id="SizeChartOpen-{{ section.id }}-{{ forloop.index0 }}" class="size-chart-btn" aria-haspopup="dialog" aria-controls="SizeChartModal-{{ section.id }}-{{ forloop.index0 }}">
                               Size Chart
@@ -303,16 +251,14 @@
                               <div class="modal-content">
                                 <button type="button" class="close1" aria-label="Close size chart">&times;</button>
                                 <div class="simtxt">
-                                  {%- if size_chart_src != blank -%}
-                                    <img
-                                      src="{{ size_chart_src }}"
-                                      alt="Size chart"
-                                      width="{{ size_chart_width }}"
-                                      height="{{ size_chart_height }}"
-                                      loading="lazy"
-                                      decoding="async"
-                                    >
-                                  {%- endif -%}
+                                  <img
+                                    src="{{ size_chart_src }}"
+                                    alt="Size chart"
+                                    width="{{ size_chart_width }}"
+                                    height="{{ size_chart_height }}"
+                                    loading="lazy"
+                                    decoding="async"
+                                  >
                                 </div>
                               </div>
                             </div>

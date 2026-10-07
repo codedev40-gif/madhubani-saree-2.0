@@ -42,10 +42,16 @@ color: #fff;
 } */
 
 
-.shopify-section-header-sticky .header__heading-link .h2,.shopify-section-header-sticky .header__menu-item,.shopify-section-header-sticky .header__active-menu-item,.shopify-section-header-sticky .header__icon
-{
-  color: #000 !important;
-} 
+.shopify-section-header-sticky .header__heading-link .h2,
+.shopify-section-header-sticky .header__menu-item,
+.shopify-section-header-sticky .header__active-menu-item,
+.shopify-section-header-sticky .header__icon {
+  color: #FFFFFF !important;
+}
+
+.shopify-section-header-sticky .header__submenu .header__menu-item:hover {
+  color: #FFFFFF !important;
+}
 
 .collection-list-wrapper li.collection-list__item.grid__item {
   position: relative;
@@ -499,36 +505,57 @@ a.header__heading-link.link.link--text.focus-inset {
 .size-chart-dialog.is-open .modal-content {
   background-color: #fefefe;
   margin: auto;
-  padding: 28px 16px 16px;
+  padding: 0;
   border: 1px solid #888;
-  width: min(750px, calc(100vw - 32px));
+  width: fit-content;
   min-width: 0;
+  max-width: min(620px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
   position: relative;
   z-index: 1;
-  max-width: 750px;
-  max-height: calc(100dvh - 32px);
-  overflow: auto;
+  overflow: hidden;
   box-sizing: border-box;
+  line-height: 0;
+}
+.size-chart-dialog.is-open .modal-content .simtxt {
+  margin: 0;
+  padding: 0;
 }
 .size-chart-dialog.is-open .modal-content img {
-  width: 100%;
+  width: auto;
+  max-width: min(620px, calc(100vw - 32px));
   height: auto;
-  max-height: none;
+  max-height: calc(100dvh - 32px);
+  object-fit: contain;
   display: block;
+  vertical-align: top;
+}
+
+@media screen and (min-width: 990px) {
+  .size-chart-dialog.is-open .modal-content {
+    max-width: min(620px, calc(100vw - 48px));
+    max-height: calc(100dvh - 48px);
+  }
+
+  .size-chart-dialog.is-open .modal-content img {
+    max-width: min(620px, calc(100vw - 48px));
+    max-height: calc(100dvh - 48px);
+  }
 }
 .size-chart-dialog.is-open .close1 {
   color: #111;
-  right: 8px;
+  right: 6px;
   position: absolute;
   top: 4px;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
   border: 0;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.85);
   line-height: 1;
-  padding: 0;
+  padding: 2px 6px;
   z-index: 2;
+  border-radius: 2px;
 }
 .size-modal .close1
 {
@@ -646,17 +673,22 @@ a.header__heading-link.link.link--text.focus-inset {
 
   .header__mega-caption {
     display: block;
-    margin-top: 0.4rem;
+    margin-top: calc(0.4rem + 5px);
     font-size: 14px;
     line-height: 1.3;
     text-align: center;
+  }
+
+  .header__inline-menu .header__menu-item,
+  .header__inline-menu .header__submenu .header__menu-item {
+    font-size: 15px;
   }
 
   .header__inline-menu .header__submenu .header__menu-item {
     width: fit-content;
     max-width: calc(100% - 1.6rem);
     margin-left: 0.8rem;
-    padding: 0.6rem 0.8rem;
+    padding: calc(0.6rem + 1px) 0.8rem;
     box-sizing: border-box;
     transform-origin: left center;
     transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
@@ -667,8 +699,8 @@ a.header__heading-link.link.link--text.focus-inset {
   }
 
   .header__inline-menu .header__submenu .header__menu-item:hover {
-    color: rgb(var(--color-foreground));
-    background-color: rgba(var(--color-foreground), 0.06);
+    color: #FFFFFF;
+    background-color: #5C0A0A;
     transform: scale(1.03);
   }
 
@@ -679,10 +711,6 @@ a.header__heading-link.link.link--text.focus-inset {
 
   .header__mega-image:hover {
     transform: scale(1.04);
-  }
-
-  .header__mega-image:hover img {
-    outline: 1px solid rgba(var(--color-foreground), 0.35);
   }
 
   .header__mega-image:hover .header__mega-caption {
@@ -769,4 +797,21 @@ announcement-rotator,
   justify-content: center;
   flex: 0 0 auto;
   width: 100%;
+}
+
+.footer .footer-block__details-content .list-menu__item--link {
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.6rem 0.8rem;
+  box-sizing: border-box;
+  transform-origin: left center;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer .footer-block__details-content .list-menu__item--link:hover,
+.footer .footer-block__details-content .list-menu__item--link:hover.link--text {
+  color: #FFFFFF;
+  background-color: #5C0A0A;
+  transform: scale(1.03);
+  text-decoration: none;
 }
