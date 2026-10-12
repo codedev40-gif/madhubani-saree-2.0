@@ -823,12 +823,12 @@ announcement-rotator,
     box-sizing: border-box;
   }
 
-  .footer__content-top .grid__item {
-    padding-left: 8rem;
+  .footer .footer__content-top .footer__blocks-wrapper > .footer-block.grid__item {
+    padding-left: 8rem !important;
   }
 
-  .footer.footer--has-bg .footer__blocks-wrapper > .footer-block.grid__item:first-child {
-    padding-left: 5rem;
+  .footer.footer--has-bg .footer__content-top .footer__blocks-wrapper > .footer-block.grid__item:first-child {
+    padding-left: 5rem !important;
   }
 
   .footer .footer-block__details-content.rte,

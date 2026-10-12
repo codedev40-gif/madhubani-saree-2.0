@@ -43,7 +43,11 @@
   }
 
   .footer__content-top .grid__item {
-    padding-left: 3rem;
+    padding-left: 8rem;
+  }
+
+  .footer.footer--has-bg .footer__blocks-wrapper > .footer-block.grid__item:first-child {
+    padding-left: 5rem;
   }
 }
 
