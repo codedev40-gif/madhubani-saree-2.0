@@ -54,6 +54,16 @@ color: #fff;
   color: #000000 !important;
 }
 
+.header__inline-menu .header__active-menu-item,
+.header__inline-menu .header__menu-item:hover .header__active-menu-item,
+.header__inline-menu .list-menu__item--active {
+  text-decoration: none;
+}
+
+.header__inline-menu .header__menu-item:hover span {
+  text-decoration: none;
+}
+
 .collection-list-wrapper li.collection-list__item.grid__item {
   position: relative;
 }
