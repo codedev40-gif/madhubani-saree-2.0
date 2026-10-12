@@ -389,6 +389,110 @@
 
                 {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
                   <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" disabled>
+                  {%- liquid
+                    assign show_engraving = false
+                    assign engraving_handle = section.settings.engraving_collection_handle | default: 'mithila-bridal-saree' | strip | downcase
+                    assign engraving_label = section.settings.engraving_label | strip
+                    assign engraving_placeholder = section.settings.engraving_placeholder | strip
+                    if engraving_label == blank or engraving_label == 'Engraving'
+                      assign engraving_label = 'Customized engraving'
+                    endif
+                    if engraving_placeholder == blank or engraving_placeholder == 'Engraving'
+                      assign engraving_placeholder = 'Enter your customized engraving'
+                    endif
+                    assign engraving_min_chars = section.settings.engraving_min_chars | default: 2
+                    assign engraving_max_chars = section.settings.engraving_max_chars | default: 50
+                    if engraving_handle != blank
+                      for collection in product.collections
+                        assign col_handle = collection.handle | downcase
+                        if col_handle == engraving_handle
+                          assign show_engraving = true
+                          break
+                        endif
+                      endfor
+                    endif
+                  -%}
+                  {%- if show_engraving -%}
+                    <div class="product-engraving product-form__input">
+                      <label class="product-engraving__label" for="Engraving-{{ section.id }}">
+                        <span class="product-engraving__title">{{ engraving_label | escape }}</span>
+                      </label>
+                      <textarea
+                        id="Engraving-{{ section.id }}"
+                        class="product-engraving__input"
+                        name="properties[Engraving]"
+                        form="{{ product_form_id }}"
+                        rows="1"
+                        autocomplete="off"
+                        maxlength="{{ engraving_max_chars }}"
+                        data-min-chars="{{ engraving_min_chars }}"
+                        data-max-chars="{{ engraving_max_chars }}"
+                        placeholder="{{ engraving_placeholder | escape }}"
+                      ></textarea>
+                      <p class="product-engraving__error" id="EngravingError-{{ section.id }}" role="alert" hidden></p>
+                    </div>
+                    <script>
+                      (function () {
+                        var input = document.getElementById("Engraving-{{ section.id }}");
+                        var errorEl = document.getElementById("EngravingError-{{ section.id }}");
+                        var form = document.getElementById("{{ product_form_id }}");
+                        if (!input) return;
+                        var minChars = parseInt(input.getAttribute("data-min-chars"), 10) || 2;
+                        var maxChars = parseInt(input.getAttribute("data-max-chars"), 10) || 50;
+
+                        function resizeField() {
+                          var hasText = !!(input.value || "").trim();
+                          if (!hasText) {
+                            input.classList.remove("is-multiline");
+                            input.style.height = "50px";
+                            return;
+                          }
+                          input.classList.add("is-multiline");
+                          input.style.height = "50px";
+                          input.style.height = Math.max(input.scrollHeight, 50) + "px";
+                        }
+
+                        function validate() {
+                          var value = (input.value || "").trim();
+                          var message = "";
+                          if (value.length > 0 && value.length < minChars) {
+                            message = "Engraving must be at least " + minChars + " characters.";
+                          } else if (value.length > maxChars) {
+                            message = "Engraving cannot be more than " + maxChars + " characters.";
+                          }
+                          if (errorEl) {
+                            if (message) {
+                              errorEl.textContent = message;
+                              errorEl.hidden = false;
+                              input.classList.add("is-invalid");
+                            } else {
+                              errorEl.textContent = "";
+                              errorEl.hidden = true;
+                              input.classList.remove("is-invalid");
+                            }
+                          }
+                          return message === "";
+                        }
+
+                        function onInput() {
+                          if (input.value.length > maxChars) {
+                            input.value = input.value.slice(0, maxChars);
+                          }
+                          validate();
+                          resizeField();
+                        }
+
+                        input.addEventListener("input", onInput);
+                        input.addEventListener("blur", validate);
+                        if (form) {
+                          form.addEventListener("submit", function (event) {
+                            if (!validate()) event.preventDefault();
+                          });
+                        }
+                        resizeField();
+                      })();
+                    </script>
+                  {%- endif -%}
                   <div class="product-form__buttons">
                     <button
                       type="submit"
@@ -935,6 +1039,49 @@
       "id": "sizeimageimage",
       "default": true,
       "label": "Size Chart"
+    },
+    {
+      "type": "header",
+      "content": "Engraving"
+    },
+    {
+      "type": "text",
+      "id": "engraving_collection_handle",
+      "label": "Engraving collection handle",
+      "default": "mithila-bridal-saree",
+      "info": "Show the engraving field only on products in this collection."
+    },
+    {
+      "type": "text",
+      "id": "engraving_label",
+      "label": "Engraving field label",
+      "default": "Customized engraving"
+    },
+    {
+      "type": "text",
+      "id": "engraving_placeholder",
+      "label": "Engraving placeholder",
+      "default": "Enter your customized engraving"
+    },
+    {
+      "type": "range",
+      "id": "engraving_min_chars",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "ch",
+      "default": 2,
+      "label": "Engraving min characters"
+    },
+    {
+      "type": "range",
+      "id": "engraving_max_chars",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "ch",
+      "default": 50,
+      "label": "Engraving max characters"
     }
   ]
 }
