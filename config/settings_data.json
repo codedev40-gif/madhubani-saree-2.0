@@ -74,6 +74,19 @@
       "header": {
         "type": "header",
         "blocks": {
+          "mega_images_UJXtWn": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Home Decor",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_533x_90c90f95-dcb4-48a6-b435-a2fc583e9bdd.webp",
+              "label_1": "Kohbar Ghar",
+              "link_1": "",
+              "label_2": "",
+              "link_2": "",
+              "label_3": "",
+              "link_3": ""
+            }
+          },
           "mega_images_q7JN6N": {
             "type": "mega_images",
             "settings": {
@@ -121,6 +134,7 @@
           }
         },
         "block_order": [
+          "mega_images_UJXtWn",
           "mega_images_q7JN6N",
           "mega_images_6kWnXQ",
           "mega_images_VGkwji"
