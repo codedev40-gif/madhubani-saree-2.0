@@ -150,6 +150,8 @@
         ],
         "settings": {
           "color_scheme": "background-2",
+          "background_image_desktop": "shopify://shop_images/Madhubani_Saree_Banner_with_Floral_Border.png",
+          "background_image_mobile": "shopify://shop_images/Madhubani_Lotus_Women_Border.png",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
