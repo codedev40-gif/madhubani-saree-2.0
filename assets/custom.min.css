@@ -641,7 +641,8 @@ a.header__heading-link.link.link--text.focus-inset {
     min-width: 0;
     max-width: none;
     box-sizing: border-box;
-    padding: 1.6rem;
+    padding: 1.6rem 1.6rem 2.8rem;
+    overflow: visible;
   }
 
   .header__mega-links {
@@ -660,8 +661,8 @@ a.header__heading-link.link.link--text.focus-inset {
     flex: 1 1 auto;
     min-width: 0;
     gap: 1.2rem;
-    margin: 0;
-    padding: 0;
+    margin: 0 0 1.2rem;
+    padding: 0 0 0.8rem;
   }
 
   .header__mega-image {
@@ -670,6 +671,7 @@ a.header__heading-link.link.link--text.focus-inset {
     width: auto;
     max-width: 260px;
     min-width: 0;
+    margin-bottom: 1.2rem;
     text-decoration: none;
     color: inherit;
   }
