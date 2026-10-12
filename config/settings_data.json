@@ -78,36 +78,36 @@
             "type": "mega_images",
             "settings": {
               "menu_item": "Accessories",
-              "label_1": "",
-              "link_1": "",
-              "label_2": "",
-              "link_2": "",
-              "label_3": "",
-              "link_3": ""
+              "label_1": "Laalima Clutch",
+              "link_1": "shopify://products/laalima-madhubani-clutch",
+              "label_2": "Do Panchhi",
+              "link_2": "shopify://products/do-panchhi-madhubani-clutch",
+              "label_3": "Kamal Lehar",
+              "link_3": "shopify://products/kamal-lehar-madhubani-clutch"
             }
           },
           "mega_images_8PFU4e": {
             "type": "mega_images",
             "settings": {
               "menu_item": "Collection",
-              "label_1": "",
-              "link_1": "",
-              "label_2": "",
-              "link_2": "",
-              "label_3": "",
-              "link_3": ""
+              "label_1": "Chhath Puja",
+              "link_1": "shopify://collections/chhath-puja",
+              "label_2": "Summer Romance",
+              "link_2": "shopify://collections/summer-romance",
+              "label_3": "Bridal Sarees",
+              "link_3": "shopify://collections/mithila-bridal-saree"
             }
           },
           "mega_images_UDJNTN": {
             "type": "mega_images",
             "settings": {
               "menu_item": "Men",
-              "label_1": "",
-              "link_1": "",
-              "label_2": "",
-              "link_2": "",
-              "label_3": "",
-              "link_3": ""
+              "label_1": "Suruj Dev",
+              "link_1": "shopify://products/suruj-dev-hand-painted-madhubani-mens-cotton-kurta",
+              "label_2": "Radha Krishna",
+              "link_2": "shopify://products/radha-krishna-hand-painted-handloom-mens-tussar-silk-kurta",
+              "label_3": "Mithila Flower",
+              "link_3": "shopify://products/mithila-flower-hand-painted-yellow-madhubani-mens-tussar-silk-kurta"
             }
           },
           "mega_images_UJXtWn": {
