@@ -823,8 +823,17 @@ announcement-rotator,
     box-sizing: border-box;
   }
 
+  .footer__content-top .grid__item {
+    padding-left: 8rem;
+  }
+
   .footer.footer--has-bg .footer__blocks-wrapper > .footer-block.grid__item:first-child {
-    padding-left: 2rem;
+    padding-left: 5rem;
+  }
+
+  .footer .footer-block__details-content.rte,
+  .footer .footer-block__details-content.rte p {
+    font-size: 14px;
   }
 }
 
@@ -892,6 +901,11 @@ announcement-rotator,
   .footer .footer__blocks-wrapper--with-subscribe .footer__list-social.list-social {
     justify-content: center;
   }
+}
+
+.footer .footer-block__details-content li:has(> a.list-menu__item--link[href="/search"]),
+.footer .footer-block__details-content a.list-menu__item--link[href="/search"] {
+  display: none;
 }
 
 .footer .footer-block__details-content .list-menu__item--link {
