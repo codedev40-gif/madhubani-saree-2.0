@@ -74,26 +74,103 @@
       "header": {
         "type": "header",
         "blocks": {
+          "mega_images_UfLAqE": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Accessories",
+              "image_1": "shopify://shop_images/MadhubaniHandpaintedClutchforgifting_2.jpg",
+              "label_1": "Laalima Clutch",
+              "link_1": "shopify://products/laalima-madhubani-clutch",
+              "image_2": "shopify://shop_images/MadhubaniHandpaintedClutchforgifting_19.jpg",
+              "label_2": "Do Panchhi",
+              "link_2": "shopify://products/do-panchhi-madhubani-clutch",
+              "image_3": "shopify://shop_images/MadhubaniHandpaintedClutchforgifting_18.jpg",
+              "label_3": "Kamal Lehar",
+              "link_3": "shopify://products/kamal-lehar-madhubani-clutch"
+            }
+          },
+          "mega_images_8PFU4e": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Collection",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_8395bdb9-6945-4382-ac31-108c75904e10.jpg",
+              "label_1": "Chhath Puja",
+              "link_1": "shopify://collections/chhath-puja",
+              "image_2": "shopify://shop_images/rn-image_picker_lib_temp_a85159b0-cfd6-4f60-b8e3-46633369e2d5.jpg",
+              "label_2": "Radha Krishna",
+              "link_2": "shopify://collections/radha-krishna",
+              "image_3": "shopify://shop_images/BihariBrideMadhubaniPaintingSaree_21.jpg",
+              "label_3": "Bridal Sarees",
+              "link_3": "shopify://collections/mithila-bridal-saree"
+            }
+          },
+          "mega_images_UDJNTN": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Men",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_8395bdb9-6945-4382-ac31-108c75904e10.jpg",
+              "label_1": "Suruj Dev",
+              "link_1": "shopify://products/suruj-dev-hand-painted-madhubani-mens-cotton-kurta",
+              "image_2": "shopify://shop_images/MadhubaniPaintingKurta_6.jpg",
+              "label_2": "Radha Krishna",
+              "link_2": "shopify://products/radha-krishna-hand-painted-handloom-mens-tussar-silk-kurta",
+              "image_3": "shopify://shop_images/MadhubaniPaintingKurta_10.jpg",
+              "label_3": "Mithila Flower",
+              "link_3": "shopify://products/mithila-flower-hand-painted-yellow-madhubani-mens-tussar-silk-kurta"
+            }
+          },
+          "mega_images_UJXtWn": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Home Decor",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_533x_90c90f95-dcb4-48a6-b435-a2fc583e9bdd.webp",
+              "label_1": "Kohbar Ghar",
+              "link_1": "https://www.madhubanipaints.com/products/kohbar-ghar-wall-hanging",
+              "image_2": "shopify://shop_images/rn-image_picker_lib_temp_581b1cb1-216e-45d9-be23-d78520a1ae45.webp",
+              "label_2": "Neel Pond",
+              "link_2": "shopify://products/neel-fish-pond-mithila-wall-hanging",
+              "image_3": "shopify://shop_images/rn-image_picker_lib_temp_d61d2fac-f3e1-432d-b3ca-9a248a5bfba2.webp",
+              "label_3": "Surujmukhi Pond",
+              "link_3": "shopify://products/surujmukhi-fish-pond-mithila-wall-hanging"
+            }
+          },
+          "mega_images_q7JN6N": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Dupattas",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_1100x_16dcc143-00ff-4504-b65c-1f43f32f2cd6.webp",
+              "label_1": "Peela Samundar",
+              "link_1": "https://www.madhubanipaints.com/products/peela-samundar-handpainted-madhubani-tussar-silk-dupatta",
+              "image_2": "shopify://shop_images/elephant_Handpainted_Madhubani_Silk_Stole_1100x_0dd0c284-70ed-44b6-ac6e-bbb370168ee0.webp",
+              "label_2": "Elephant Stole",
+              "link_2": "https://www.madhubanipaints.com/products/elephant-in-mithila-tussar-silk-stole",
+              "image_3": "shopify://shop_images/rn-image_picker_lib_temp_1100x_e905b014-336e-4055-93ae-cc19a90f2bdc.webp",
+              "label_3": "Prakritik Sangeet",
+              "link_3": "https://www.madhubanipaints.com/products/prakritik-sangeet-handpainted-madhubani-tussar-silk-dupatta"
+            }
+          },
           "mega_images_6kWnXQ": {
             "type": "mega_images",
             "settings": {
               "menu_item": "Kurta Sets",
-              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_8eaab5ad-4fd0-4ebe-8123-c20e22781203.jpg",
-              "label_1": "test",
-              "link_1": "#",
-              "label_2": "",
-              "link_2": "",
-              "label_3": "",
-              "link_3": ""
+              "image_1": "shopify://shop_images/MPOKH0000079_7.webp",
+              "label_1": "Gajanand Mayur",
+              "link_1": "https://www.madhubanipaints.com/products/gubbaro-handpainted-madhubani-gajanand-mayur-tussar-silk-kurta",
+              "image_2": "shopify://shop_images/MPOKH0000077_5.webp",
+              "label_2": "Tilkor Kamal",
+              "link_2": "https://www.madhubanipaints.com/products/gubbaro-handpainted-madhubani-tilkor-kamal-cotton-kurta",
+              "image_3": "shopify://shop_images/rn-image_picker_lib_temp_1100x_58a5302b-d9d7-4890-8c57-ae7e43a61ad4.webp",
+              "label_3": "Suruj Dev",
+              "link_3": "https://www.madhubanipaints.com/products/suruj-dev-hand-painted-madhubani-mens-cotton-kurta"
             }
           },
           "mega_images_VGkwji": {
             "type": "mega_images",
             "settings": {
               "menu_item": "Sarees",
-              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_9826b4c3-33b2-479e-8fd7-f515994a9532.jpg",
-              "label_1": "Teej Special",
-              "link_1": "shopify://products/chumaun-handpainted-madhubani-bishnupuri-silk-saree",
+              "image_1": "shopify://shop_images/photo-output80_copy_3000x4500_1100x_4d9c4a01-7ffd-46bf-8e60-5fd33b666fbd.webp",
+              "label_1": "Chanderi Saree",
+              "link_1": "https://www.madhubanipaints.com/products/sobhan-hand-painted-madhubani-saree-blouse-set",
               "image_2": "shopify://shop_images/chhath_puja_2_3.jpg",
               "label_2": "Mithila Mayur",
               "link_2": "shopify://products/gubbaro-handpainted-madhubani-mithila-mayur-cotton-pant",
@@ -104,6 +181,11 @@
           }
         },
         "block_order": [
+          "mega_images_UfLAqE",
+          "mega_images_8PFU4e",
+          "mega_images_UDJNTN",
+          "mega_images_UJXtWn",
+          "mega_images_q7JN6N",
           "mega_images_6kWnXQ",
           "mega_images_VGkwji"
         ],
