@@ -78,10 +78,13 @@
             "type": "mega_images",
             "settings": {
               "menu_item": "Accessories",
+              "image_1": "shopify://shop_images/MadhubaniHandpaintedClutchforgifting_2.jpg",
               "label_1": "Laalima Clutch",
               "link_1": "shopify://products/laalima-madhubani-clutch",
+              "image_2": "shopify://shop_images/MadhubaniHandpaintedClutchforgifting_19.jpg",
               "label_2": "Do Panchhi",
               "link_2": "shopify://products/do-panchhi-madhubani-clutch",
+              "image_3": "shopify://shop_images/MadhubaniHandpaintedClutchforgifting_18.jpg",
               "label_3": "Kamal Lehar",
               "link_3": "shopify://products/kamal-lehar-madhubani-clutch"
             }
@@ -90,10 +93,13 @@
             "type": "mega_images",
             "settings": {
               "menu_item": "Collection",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_8395bdb9-6945-4382-ac31-108c75904e10.jpg",
               "label_1": "Chhath Puja",
               "link_1": "shopify://collections/chhath-puja",
-              "label_2": "Summer Romance",
-              "link_2": "shopify://collections/summer-romance",
+              "image_2": "shopify://shop_images/rn-image_picker_lib_temp_a85159b0-cfd6-4f60-b8e3-46633369e2d5.jpg",
+              "label_2": "Radha Krishna",
+              "link_2": "shopify://collections/radha-krishna",
+              "image_3": "shopify://shop_images/BihariBrideMadhubaniPaintingSaree_21.jpg",
               "label_3": "Bridal Sarees",
               "link_3": "shopify://collections/mithila-bridal-saree"
             }
@@ -102,10 +108,13 @@
             "type": "mega_images",
             "settings": {
               "menu_item": "Men",
+              "image_1": "shopify://shop_images/rn-image_picker_lib_temp_8395bdb9-6945-4382-ac31-108c75904e10.jpg",
               "label_1": "Suruj Dev",
               "link_1": "shopify://products/suruj-dev-hand-painted-madhubani-mens-cotton-kurta",
+              "image_2": "shopify://shop_images/MadhubaniPaintingKurta_6.jpg",
               "label_2": "Radha Krishna",
               "link_2": "shopify://products/radha-krishna-hand-painted-handloom-mens-tussar-silk-kurta",
+              "image_3": "shopify://shop_images/MadhubaniPaintingKurta_10.jpg",
               "label_3": "Mithila Flower",
               "link_3": "shopify://products/mithila-flower-hand-painted-yellow-madhubani-mens-tussar-silk-kurta"
             }
