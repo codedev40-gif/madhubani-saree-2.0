@@ -46,11 +46,12 @@ color: #fff;
 .shopify-section-header-sticky .header__menu-item,
 .shopify-section-header-sticky .header__active-menu-item,
 .shopify-section-header-sticky .header__icon {
-  color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
-.shopify-section-header-sticky .header__submenu .header__menu-item:hover {
-  color: #FFFFFF !important;
+.homec .header__inline-menu .header__submenu .header__menu-item,
+.shopify-section-header-sticky .header__inline-menu .header__submenu .header__menu-item {
+  color: #000000 !important;
 }
 
 .collection-list-wrapper li.collection-list__item.grid__item {
@@ -690,8 +691,9 @@ a.header__heading-link.link.link--text.focus-inset {
     margin-left: 0.8rem;
     padding: calc(0.6rem + 1px) 0.8rem;
     box-sizing: border-box;
+    color: #000000;
     transform-origin: left center;
-    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    transition: transform 0.2s ease;
   }
 
   .header__inline-menu .header__submenu summary.header__menu-item {
@@ -699,9 +701,14 @@ a.header__heading-link.link.link--text.focus-inset {
   }
 
   .header__inline-menu .header__submenu .header__menu-item:hover {
-    color: #FFFFFF;
-    background-color: #5C0A0A;
-    transform: scale(1.03);
+    color: #000000;
+    background-color: transparent;
+    transform: scale(1.06);
+    text-decoration: none;
+  }
+
+  .header__inline-menu .header__submenu .header__menu-item:hover span {
+    text-decoration: none;
   }
 
   .header__mega-image {
@@ -804,15 +811,16 @@ announcement-rotator,
   max-width: 100%;
   padding: 0.6rem 0.8rem;
   box-sizing: border-box;
+  color: #000000;
   transform-origin: left center;
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .footer .footer-block__details-content .list-menu__item--link:hover,
 .footer .footer-block__details-content .list-menu__item--link:hover.link--text {
-  color: #FFFFFF;
-  background-color: #5C0A0A;
-  transform: scale(1.03);
+  color: #000000;
+  background-color: transparent;
+  transform: scale(1.06);
   text-decoration: none;
 }
 
