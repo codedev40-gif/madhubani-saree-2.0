@@ -13,7 +13,7 @@
     "colors_accent_1": "#121212",
     "gradient_accent_1": "linear-gradient(270deg, rgba(18, 18, 18, 1), rgba(249, 208, 163, 1) 89%)",
     "colors_accent_2": "#121212",
-    "body_background_color": "#f8e2be",
+    "body_background_color": "#F8E2BE",
     "colors_text": "#121212",
     "colors_outline_button_labels": "#121212",
     "colors_background_1": "#f8e2be",
@@ -132,7 +132,7 @@
             "type": "text",
             "settings": {
               "heading": "SHATAKSHI CREATIONS",
-              "subtext": "<p>Madhubani Art From Mithila<br/>MADHUBANI PAINTS is a Bihar based ethnic label brand, run by National Award Winner Smt. Asha Jha. This label is run solely by a group of 150-200 women. Shipping worldwide.</p>"
+              "subtext": "<p>Madhubani Art From Mithila<br/>MADHUBANI PAINTS is a Bihar based ethnic label brand, run by National Award Winner Smt. Asha Jha. This label is run solely by a group of 300 women. Shipping worldwide.</p>"
             }
           },
           "73357a7b-2320-4001-8797-1b5b774f5086": {
@@ -150,6 +150,8 @@
         ],
         "settings": {
           "color_scheme": "background-2",
+          "background_image_desktop": "shopify://shop_images/Madhubani_Saree_Banner_with_Floral_Border.png",
+          "background_image_mobile": "shopify://shop_images/Madhubani_Lotus_Women_Border.png",
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
