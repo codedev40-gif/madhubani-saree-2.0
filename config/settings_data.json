@@ -74,6 +74,19 @@
       "header": {
         "type": "header",
         "blocks": {
+          "mega_images_q7JN6N": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Dupattas",
+              "image_1": "shopify://shop_images/MPOKH0000055_2.webp",
+              "label_1": "Joda Mayuri",
+              "link_1": "https://www.madhubanipaints.com/products/gubbaro-handpainted-madhubani-joda-mayuri-cotton-dupatta",
+              "label_2": "",
+              "link_2": "",
+              "label_3": "",
+              "link_3": ""
+            }
+          },
           "mega_images_6kWnXQ": {
             "type": "mega_images",
             "settings": {
@@ -106,6 +119,7 @@
           }
         },
         "block_order": [
+          "mega_images_q7JN6N",
           "mega_images_6kWnXQ",
           "mega_images_VGkwji"
         ],
