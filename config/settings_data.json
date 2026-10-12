@@ -74,6 +74,42 @@
       "header": {
         "type": "header",
         "blocks": {
+          "mega_images_UfLAqE": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Accessories",
+              "label_1": "",
+              "link_1": "",
+              "label_2": "",
+              "link_2": "",
+              "label_3": "",
+              "link_3": ""
+            }
+          },
+          "mega_images_8PFU4e": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Collection",
+              "label_1": "",
+              "link_1": "",
+              "label_2": "",
+              "link_2": "",
+              "label_3": "",
+              "link_3": ""
+            }
+          },
+          "mega_images_UDJNTN": {
+            "type": "mega_images",
+            "settings": {
+              "menu_item": "Men",
+              "label_1": "",
+              "link_1": "",
+              "label_2": "",
+              "link_2": "",
+              "label_3": "",
+              "link_3": ""
+            }
+          },
           "mega_images_UJXtWn": {
             "type": "mega_images",
             "settings": {
@@ -136,6 +172,9 @@
           }
         },
         "block_order": [
+          "mega_images_UfLAqE",
+          "mega_images_8PFU4e",
+          "mega_images_UDJNTN",
           "mega_images_UJXtWn",
           "mega_images_q7JN6N",
           "mega_images_6kWnXQ",
