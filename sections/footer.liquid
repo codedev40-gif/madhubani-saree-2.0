@@ -14,7 +14,39 @@
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient">
+{%- liquid
+  assign footer_bg_desktop = section.settings.background_image_desktop
+  assign footer_bg_mobile = section.settings.background_image_mobile
+  if footer_bg_desktop == blank
+    assign footer_bg_desktop = footer_bg_mobile
+  endif
+  if footer_bg_mobile == blank
+    assign footer_bg_mobile = footer_bg_desktop
+  endif
+  assign footer_has_bg = false
+  if footer_bg_desktop != blank
+    assign footer_has_bg = true
+  endif
+-%}
+{%- if footer_has_bg -%}
+  {% style %}
+    #shopify-section-{{ section.id }} .footer.footer--has-bg {
+      background-color: rgb(var(--color-background));
+      background-image: url('{{ footer_bg_mobile | image_url: width: 1200 }}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+
+    @media screen and (min-width: 750px) {
+      #shopify-section-{{ section.id }} .footer.footer--has-bg {
+        background-image: url('{{ footer_bg_desktop | image_url: width: 2000 }}');
+      }
+    }
+  {% endstyle %}
+{%- endif -%}
+<footer class="footer color-{{ section.settings.color_scheme }}{% if footer_has_bg %} footer--has-bg{% else %} gradient{% endif %}">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
       {%- if section.blocks.size > 0 -%}
@@ -528,6 +560,21 @@
       ],
       "default": "background-1",
       "label": "t:sections.footer.settings.color_scheme.label"
+    },
+    {
+      "type": "header",
+      "content": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Desktop background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Mobile background image",
+      "info": "Optional. If empty, the desktop image is used on mobile."
     },
     {
       "type": "header",

@@ -50,6 +50,13 @@
       },
       {
         "type": "color",
+        "id": "body_background_color",
+        "default": "#F8E2BE",
+        "label": "Body background colour",
+        "info": "Site-wide page background. Paste a hex code (for example #F8E2BE) or use the colour picker."
+      },
+      {
+        "type": "color",
         "id": "colors_text",
         "default": "#121212",
         "label": "t:settings_schema.colors.settings.colors_text.label",

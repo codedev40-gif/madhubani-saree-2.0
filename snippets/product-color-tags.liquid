@@ -1,0 +1,87 @@
+{% comment %}
+  Renders product tags that match colored-tag syntax.
+
+  Formats:
+  - Label_#BGHEX
+    Example: Sale_#5C0A0A
+  - Label_#BGHEX_#TEXHEX
+    Example: Ready to Ship_#1A5F2A_#000000
+    Background = #1A5F2A, label text color = #000000
+
+  Accepts:
+  - product: {Object} Product Liquid object (required)
+  - class: {String} Extra class on the wrapper (optional)
+{% endcomment %}
+
+{%- liquid
+  assign tag_product = product
+  assign has_color_tags = false
+
+  for tag in tag_product.tags
+    if tag contains '_#'
+      assign tag_parts = tag | split: '_#'
+      if tag_parts.size >= 2
+        assign end_raw = tag_parts.last | strip | downcase
+        assign end_len = end_raw.size
+        if end_len == 3 or end_len == 6 or end_len == 8
+          assign has_color_tags = true
+          break
+        endif
+      endif
+    endif
+  endfor
+-%}
+
+{%- if has_color_tags -%}
+  <ul class="product-color-tags{% if class != blank %} {{ class }}{% endif %}" role="list">
+    {%- for tag in tag_product.tags -%}
+      {%- if tag contains '_#' -%}
+        {%- liquid
+          assign tag_parts = tag | split: '_#'
+          assign show_tag = false
+          assign tag_label = ''
+          assign tag_bg = ''
+          assign tag_text = '#ffffff'
+
+          if tag_parts.size >= 2
+            assign end_raw = tag_parts.last | strip | downcase
+            assign end_len = end_raw.size
+
+            if end_len == 3 or end_len == 6 or end_len == 8
+              assign without_last_count = tag_parts.size | minus: 1
+              assign without_last = tag_parts | slice: 0, without_last_count
+              assign maybe_bg = without_last.last | strip | downcase
+              assign maybe_bg_len = maybe_bg.size
+
+              assign has_text_color = false
+              if tag_parts.size >= 3
+                if maybe_bg_len == 3 or maybe_bg_len == 6 or maybe_bg_len == 8
+                  assign has_text_color = true
+                endif
+              endif
+
+              if has_text_color
+                assign tag_text = '#' | append: end_raw
+                assign tag_bg = '#' | append: maybe_bg
+                assign label_count = without_last.size | minus: 1
+                assign tag_label = without_last | slice: 0, label_count | join: '_' | strip
+              else
+                assign tag_bg = '#' | append: end_raw
+                assign tag_label = without_last | join: '_' | strip
+              endif
+
+              if tag_label != blank and tag_bg != blank
+                assign show_tag = true
+              endif
+            endif
+          endif
+        -%}
+        {%- if show_tag -%}
+          <li class="product-color-tags__item" style="background-color: {{ tag_bg }}; color: {{ tag_text }};">
+            <span class="product-color-tags__label">{{ tag_label | escape }}</span>
+          </li>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

@@ -83,6 +83,7 @@
             <h1 class="product__title" {{ block.shopify_attributes }}>
               {{ product.title | escape }}
             </h1>
+            {% render 'product-color-tags', product: product, class: 'product-color-tags--pdp' %}
         
         
 
