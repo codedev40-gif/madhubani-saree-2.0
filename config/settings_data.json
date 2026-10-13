@@ -28,6 +28,14 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_3DMXkr": {
+            "type": "announcement",
+            "settings": {
+              "text": "Madhubani Painting Isn't Just for Sarees. It's for Him Too",
+              "color_scheme": "inverse",
+              "link": "https://www.madhubanipaints.com/collections/mens-kurta"
+            }
+          },
           "announcement_MGMn4G": {
             "type": "announcement",
             "settings": {
@@ -82,6 +90,7 @@
           }
         },
         "block_order": [
+          "announcement_3DMXkr",
           "announcement_MGMn4G",
           "announcement_zq4xRH",
           "announcement-bar-0",
