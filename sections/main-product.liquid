@@ -394,11 +394,11 @@
                     assign engraving_handle = section.settings.engraving_collection_handle | default: 'mithila-bridal-saree' | strip | downcase
                     assign engraving_label = section.settings.engraving_label | strip
                     assign engraving_placeholder = section.settings.engraving_placeholder | strip
-                    if engraving_label == blank or engraving_label == 'Engraving'
-                      assign engraving_label = 'Customized engraving'
+                    if engraving_label == blank or engraving_label == 'Engraving' or engraving_label == 'Customized engraving'
+                      assign engraving_label = 'Personalise with Your Names'
                     endif
-                    if engraving_placeholder == blank or engraving_placeholder == 'Engraving'
-                      assign engraving_placeholder = 'Enter your customized engraving'
+                    if engraving_placeholder == blank or engraving_placeholder == 'Engraving' or engraving_placeholder == 'Enter your customized engraving'
+                      assign engraving_placeholder = 'Enter your names'
                     endif
                     assign engraving_min_chars = section.settings.engraving_min_chars | default: 2
                     assign engraving_max_chars = section.settings.engraving_max_chars | default: 50
@@ -420,13 +420,14 @@
                       <textarea
                         id="Engraving-{{ section.id }}"
                         class="product-engraving__input"
-                        name="properties[Engraving]"
+                        name="properties[{{ engraving_label | escape }}]"
                         form="{{ product_form_id }}"
                         rows="1"
                         autocomplete="off"
                         maxlength="{{ engraving_max_chars }}"
                         data-min-chars="{{ engraving_min_chars }}"
                         data-max-chars="{{ engraving_max_chars }}"
+                        data-field-label="{{ engraving_label | escape }}"
                         placeholder="{{ engraving_placeholder | escape }}"
                       ></textarea>
                       <p class="product-engraving__error" id="EngravingError-{{ section.id }}" role="alert" hidden></p>
@@ -439,6 +440,7 @@
                         if (!input) return;
                         var minChars = parseInt(input.getAttribute("data-min-chars"), 10) || 2;
                         var maxChars = parseInt(input.getAttribute("data-max-chars"), 10) || 50;
+                        var fieldLabel = input.getAttribute("data-field-label") || "Personalise with Your Names";
 
                         function resizeField() {
                           var hasText = !!(input.value || "").trim();
@@ -455,10 +457,12 @@
                         function validate() {
                           var value = (input.value || "").trim();
                           var message = "";
-                          if (value.length > 0 && value.length < minChars) {
-                            message = "Engraving must be at least " + minChars + " characters.";
+                          if (/\d/.test(value)) {
+                            message = "Numbers are not allowed.";
+                          } else if (value.length > 0 && value.length < minChars) {
+                            message = fieldLabel + " must be at least " + minChars + " characters.";
                           } else if (value.length > maxChars) {
-                            message = "Engraving cannot be more than " + maxChars + " characters.";
+                            message = fieldLabel + " cannot be more than " + maxChars + " characters.";
                           }
                           if (errorEl) {
                             if (message) {
@@ -475,13 +479,32 @@
                         }
 
                         function onInput() {
+                          var hadDigits = /\d/.test(input.value);
+                          if (hadDigits) {
+                            input.value = input.value.replace(/\d+/g, "");
+                          }
                           if (input.value.length > maxChars) {
                             input.value = input.value.slice(0, maxChars);
                           }
                           validate();
+                          if (hadDigits && errorEl) {
+                            errorEl.textContent = "Numbers are not allowed.";
+                            errorEl.hidden = false;
+                            input.classList.add("is-invalid");
+                          }
                           resizeField();
                         }
 
+                        input.addEventListener("beforeinput", function (event) {
+                          if (event.data && /\d/.test(event.data)) {
+                            event.preventDefault();
+                            if (errorEl) {
+                              errorEl.textContent = "Numbers are not allowed.";
+                              errorEl.hidden = false;
+                              input.classList.add("is-invalid");
+                            }
+                          }
+                        });
                         input.addEventListener("input", onInput);
                         input.addEventListener("blur", validate);
                         if (form) {
@@ -1042,26 +1065,27 @@
     },
     {
       "type": "header",
-      "content": "Engraving"
+      "content": "Personalise with Your Names"
     },
     {
       "type": "text",
       "id": "engraving_collection_handle",
-      "label": "Engraving collection handle",
+      "label": "Personalise collection handle",
       "default": "mithila-bridal-saree",
-      "info": "Show the engraving field only on products in this collection."
+      "info": "Show the personalise field only on products in this collection."
     },
     {
       "type": "text",
       "id": "engraving_label",
-      "label": "Engraving field label",
-      "default": "Customized engraving"
+      "label": "Personalise field label",
+      "default": "Personalise with Your Names",
+      "info": "This label is also used as the cart/order line item property name."
     },
     {
       "type": "text",
       "id": "engraving_placeholder",
-      "label": "Engraving placeholder",
-      "default": "Enter your customized engraving"
+      "label": "Personalise placeholder",
+      "default": "Enter your names"
     },
     {
       "type": "range",
@@ -1071,7 +1095,7 @@
       "step": 1,
       "unit": "ch",
       "default": 2,
-      "label": "Engraving min characters"
+      "label": "Personalise min characters"
     },
     {
       "type": "range",
@@ -1081,7 +1105,7 @@
       "step": 1,
       "unit": "ch",
       "default": 50,
-      "label": "Engraving max characters"
+      "label": "Personalise max characters"
     }
   ]
 }
