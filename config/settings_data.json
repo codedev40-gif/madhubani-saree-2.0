@@ -28,6 +28,14 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_MGMn4G": {
+            "type": "announcement",
+            "settings": {
+              "text": "Every Purchase Helps Preserve an Art and Empower the 300 Women Behind It",
+              "color_scheme": "inverse",
+              "link": ""
+            }
+          },
           "announcement_zq4xRH": {
             "type": "announcement",
             "settings": {
@@ -74,6 +82,7 @@
           }
         },
         "block_order": [
+          "announcement_MGMn4G",
           "announcement_zq4xRH",
           "announcement-bar-0",
           "announcement_PngNea",
