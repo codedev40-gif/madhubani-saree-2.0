@@ -28,8 +28,17 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
+          "announcement_zq4xRH": {
+            "type": "announcement",
+            "settings": {
+              "text": "Every bride deserves art. Discover the Bihari Bride edit",
+              "color_scheme": "inverse",
+              "link": "https://www.madhubanipaints.com/collections/mithila-bridal-saree"
+            }
+          },
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "MADE IN BIHAR, HANDPAINTED WITH LOVE",
               "color_scheme": "inverse",
@@ -38,6 +47,7 @@
           },
           "announcement_PngNea": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "GET 10% OFF ON FIRST ORDER",
               "color_scheme": "inverse",
@@ -46,6 +56,7 @@
           },
           "announcement_MKCwVR": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "GET FREE SHIPPING ABOVE 1999 RS. ORDER VALUE",
               "color_scheme": "inverse",
@@ -54,6 +65,7 @@
           },
           "announcement_VBkNiC": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "TEST",
               "color_scheme": "inverse",
@@ -62,6 +74,7 @@
           }
         },
         "block_order": [
+          "announcement_zq4xRH",
           "announcement-bar-0",
           "announcement_PngNea",
           "announcement_MKCwVR",
