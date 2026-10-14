@@ -54,7 +54,6 @@
           },
           "announcement-bar-0": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "MADE IN BIHAR, HANDPAINTED WITH LOVE",
               "color_scheme": "inverse",
