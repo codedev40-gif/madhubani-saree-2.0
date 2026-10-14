@@ -1,3 +1,31 @@
+{% style %}
+  #shopify-section-{{ section.id }},
+  #shopify-section-{{ section.id }} .announcement-rotator,
+  #shopify-section-{{ section.id }} .announcement-bar__track,
+  #shopify-section-{{ section.id }} .announcement-bar {
+    background: #000 !important;
+    background-image: none !important;
+    background-attachment: scroll !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+  #shopify-section-{{ section.id }} {
+    position: relative;
+    z-index: 4;
+  }
+  /* Cover any 1px seam (body beige #F8E2BE) under the bar */
+  #shopify-section-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: #000;
+    pointer-events: none;
+  }
+{% endstyle %}
 {%- if section.blocks.size > 1 -%}
   <announcement-rotator class="announcement-rotator" data-interval="{{ section.settings.rotate_seconds | default: 4 | times: 1000 }}">
     <div class="announcement-bar__track">
@@ -5,7 +33,7 @@
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
-      <div class="announcement-bar color-{{ block.settings.color_scheme }} gradient" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
+      <div class="announcement-bar color-{{ block.settings.color_scheme }}" role="region" aria-label="{{ 'sections.header.announcement' | t }}" {{ block.shopify_attributes }}>
         {%- if block.settings.text != blank -%}
           {%- if block.settings.link != blank -%}
             <a href="{{ block.settings.link }}" class="announcement-bar__link link link--text focus-inset">
