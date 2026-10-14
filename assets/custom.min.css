@@ -782,6 +782,11 @@ a.header__heading-link.link.link--text.focus-inset {
   }
 }
 
+.announcement-bar,
+#shopify-section-announcement-bar .announcement-bar {
+  border-bottom-color: #000000;
+}
+
 announcement-rotator,
 .announcement-rotator {
   display: block;
