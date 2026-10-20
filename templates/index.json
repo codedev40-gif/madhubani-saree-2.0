@@ -23,28 +23,6 @@
             "link": "shopify://collections/chhath-puja"
           }
         },
-        "62910abd-5e77-4d6e-a73c-bd342141c719": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/Bihari_Bride_in_Madhubani_Splendour.png",
-            "mimage": "shopify://shop_images/Bihari_Bride__Madhubani_Bridal_Elegance.png",
-            "heading": "",
-            "para": "",
-            "btnname": "SHOP NOW",
-            "link": "shopify://collections/mithila-bridal-saree"
-          }
-        },
-        "aef05ec2-e379-4047-8ee2-a8a7d57bad95": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/Madhubani_Men_s_Kurta_Collection.png",
-            "mimage": "shopify://shop_images/Hand-Painted_Madhubani_Men_s_Collection_1.png",
-            "heading": "",
-            "para": "",
-            "btnname": "SHOP NOW",
-            "link": "shopify://collections/mens-kurta"
-          }
-        },
         "block_mqYAm3": {
           "type": "block",
           "settings": {
@@ -54,6 +32,17 @@
             "para": "",
             "btnname": "SHOP NOW",
             "link": "shopify://collections/unstitched-kurta"
+          }
+        },
+        "62910abd-5e77-4d6e-a73c-bd342141c719": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Bihari_Bride_in_Madhubani_Splendour.png",
+            "mimage": "shopify://shop_images/Bihari_Bride__Madhubani_Bridal_Elegance.png",
+            "heading": "",
+            "para": "",
+            "btnname": "SHOP NOW",
+            "link": "shopify://collections/mithila-bridal-saree"
           }
         },
         "2a6d4dc1-4146-468e-b04e-f8472dca5024": {
@@ -67,12 +56,23 @@
             "link": "shopify://collections/wall-painting"
           }
         },
+        "aef05ec2-e379-4047-8ee2-a8a7d57bad95": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Madhubani_Men_s_Kurta_Collection.png",
+            "mimage": "shopify://shop_images/Hand-Painted_Madhubani_Men_s_Collection_1.png",
+            "heading": "",
+            "para": "",
+            "btnname": "SHOP NOW",
+            "link": "shopify://collections/mens-kurta"
+          }
+        },
         "block_4yDgJf": {
           "type": "block",
           "settings": {
-            "image": "shopify://shop_images/IMG_6008.heic",
+            "image": "shopify://shop_images/Artisanal_Silk_Stoles_Showcase.png",
             "mimage": "shopify://shop_images/IMG_6014.heic",
-            "heading": "SILK STOLE",
+            "heading": "",
             "para": "",
             "btnname": "SHOP NOW",
             "link": "shopify://collections/stoles"
@@ -81,10 +81,10 @@
       },
       "block_order": [
         "35b46ddf-e2ef-4271-a25c-4e6dbcc21059",
-        "62910abd-5e77-4d6e-a73c-bd342141c719",
-        "aef05ec2-e379-4047-8ee2-a8a7d57bad95",
         "block_mqYAm3",
+        "62910abd-5e77-4d6e-a73c-bd342141c719",
         "2a6d4dc1-4146-468e-b04e-f8472dca5024",
+        "aef05ec2-e379-4047-8ee2-a8a7d57bad95",
         "block_4yDgJf"
       ],
       "settings": {}
