@@ -12,6 +12,17 @@
     "1656495026a5b30a74": {
       "type": "slideshow",
       "blocks": {
+        "62910abd-5e77-4d6e-a73c-bd342141c719": {
+          "type": "block",
+          "settings": {
+            "image": "shopify://shop_images/Handpainted_fashion_showcase_banner.png",
+            "mimage": "shopify://shop_images/Bihari_Bride__Madhubani_Bridal_Elegance.png",
+            "heading": "",
+            "para": "",
+            "btnname": "SHOP NOW",
+            "link": "shopify://collections/mithila-bridal-saree"
+          }
+        },
         "35b46ddf-e2ef-4271-a25c-4e6dbcc21059": {
           "type": "block",
           "settings": {
@@ -32,17 +43,6 @@
             "para": "",
             "btnname": "SHOP NOW",
             "link": "shopify://collections/unstitched-kurta"
-          }
-        },
-        "62910abd-5e77-4d6e-a73c-bd342141c719": {
-          "type": "block",
-          "settings": {
-            "image": "shopify://shop_images/Handpainted_fashion_showcase_banner.png",
-            "mimage": "shopify://shop_images/Bihari_Bride__Madhubani_Bridal_Elegance.png",
-            "heading": "",
-            "para": "",
-            "btnname": "SHOP NOW",
-            "link": "shopify://collections/mithila-bridal-saree"
           }
         },
         "2a6d4dc1-4146-468e-b04e-f8472dca5024": {
@@ -80,9 +80,9 @@
         }
       },
       "block_order": [
+        "62910abd-5e77-4d6e-a73c-bd342141c719",
         "35b46ddf-e2ef-4271-a25c-4e6dbcc21059",
         "block_mqYAm3",
-        "62910abd-5e77-4d6e-a73c-bd342141c719",
         "2a6d4dc1-4146-468e-b04e-f8472dca5024",
         "aef05ec2-e379-4047-8ee2-a8a7d57bad95",
         "block_4yDgJf"
